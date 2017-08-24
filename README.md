@@ -2,4 +2,4 @@
 
 ### links:
 
-> - [自定义下拉](/cdn0/examples/customselect.html)
+> - [自定义下拉](https://wxlzmt.github.io/cdn0/examples/customselect.html)
