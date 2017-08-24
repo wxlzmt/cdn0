@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>自定义下拉</title>
+	<style type="text/css">
+		ul{
+			list-style: none;
+		}
+		li{
+			list-style-type:none;
+		}
+		.d-nav{
+			float: left;
+			padding-right: 24px;
+			cursor:pointer;
+		}
+		.d-nav>li{
+			float:left;
+			position: relative;
+		}
+		.drop-down ul,.drop-down a{
+			display: block;
+			text-decoration: none;
+			width: 80px;
+			height: 24px;
+			text-align: center;
+			line-height: 24px;
+			color: white;
+			background-color: #2c2c2c;
+		}
+		.drop-down a img{
+			position: absolute;
+			right: 4px;
+			top: 4px;
+			-webkit-transition: all 0.4s ease;
+			-o-transition: all 0.4s ease;
+			transition: all 0.4s ease;
+			-webkit-text-stroke: 1px #f8a217;
+		}
+		.trans-180{
+			-webkit-transform: rotate(180deg);
+			-ms-transform: rotate(180deg);
+			-o-transform: rotate(180deg);
+			transform: rotate(180deg);
+		}
+		.drop-down{
+			position: relative;
+			height: 24px;
+			overflow: hidden;
+		}
+		.drop-down-content{
+			padding: 0;
+			position: absolute;
+		}
+		.drop-down-content li:hover a{
+			background-color:#FF7F29;
+		}
+		
+	</style>
+	<script type="text/javascript" src="../js/jquery-2.1.1.js" ></script>
+</head>
+<body>
+<ul class="d-nav clearfix">
+	<li class="drop-down" >
+		<a><span id="idspandef">流畅</span><img src="../res/arraw/down.png" /></a>
+		<ul class="drop-down-content">
+			<li><a onclick="clickSelectDefinition('0','清晰');">清晰</a></li>
+			<li><a onclick="clickSelectDefinition('1','流畅');">流畅</a></li>
+		</ul>
+	</li>
+	<li class="drop-down" >
+		<a><span id="idspanip">联通</span><img src="../res/arraw/down.png" /></a>
+		<ul class="drop-down-content">
+			<li><a onclick="clickSelectIp('a','联通');">联通</a></li>
+			<li><a onclick="clickSelectIp('b','电信');">电信</a></li>
+		</ul>
+	</li>
+</ul>
+<script type="text/javascript">
+	$(function(){
+		$(".drop-down").on("mouseover",function(){
+			$(this).css("overflow","visible").find("img").addClass("trans-180");
+		}).on("mouseout",function(){
+			$(this).css("overflow","hidden").find("img").removeClass("trans-180");;
+		}).on("click",function(){
+			$(this).css("overflow","hidden").find("img").removeClass("trans-180");;
+		});
+	});
+</script>
+</body>
+</html>
+
